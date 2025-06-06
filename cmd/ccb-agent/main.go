@@ -52,6 +52,12 @@ func main() {
 				Required: true,
 			},
 			&cli.StringFlag{
+				Name:     "church",
+				Aliases:  []string{"c"},
+				Usage:    "Your CCB subdomain",
+				Required: true,
+			},
+			&cli.StringFlag{
 				Name:    "log-level",
 				Aliases: []string{"l"},
 				Usage:   "Logging level (debug, info, warn, error, fatal)",
@@ -66,6 +72,5 @@ func main() {
 
 	if err := app.Run(context.Background(), os.Args); err != nil {
 		log.WithError(err).Fatal("Failed with error")
-		os.Exit(1)
 	}
 }
