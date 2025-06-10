@@ -1,6 +1,6 @@
 module github.com/jvardilos/ccb-agent
 
-go 1.24.2
+go 1.24.4
 
 require (
 	github.com/apex/log v1.9.0
