@@ -5,15 +5,15 @@ import (
 	"fmt"
 
 	"github.com/jvardilos/ccb-agent/pkg/fileio"
-	"github.com/jvardilos/ccb-agent/pkg/url"
+	"github.com/jvardilos/ccb-agent/pkg/llm"
 	"github.com/urfave/cli/v3"
 )
 
 func Agent(ctx context.Context, c *cli.Command) error {
 
-	out, err := url.GetFromDB("GET", "https://httpbin.org/anything")
+	out, err := llm.Ask("Hi There, please respond")
 	if err != nil {
-		return fmt.Errorf("%w", err)
+		return err
 	}
 
 	if err := fileio.WriteJSON(out, "name.json"); err != nil {

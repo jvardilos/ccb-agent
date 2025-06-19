@@ -12,8 +12,8 @@ type Requester interface {
 	Request() (*http.Request, error)
 }
 
-func GetFromDB(method, url string) (any, error) {
-	pm, err := ParseMethod(method, url)
+func GetFromDB(method, url string, params map[string]any) (map[string]any, error) {
+	pm, err := ParseMethod(method, url, params)
 	if err != nil {
 		return nil, fmt.Errorf("%w", err)
 	}
@@ -34,6 +34,8 @@ func GetFromDB(method, url string) (any, error) {
 	if err != nil {
 		return nil, fmt.Errorf("cannot read bytes %w", err)
 	}
+
+	fmt.Println(string(in))
 
 	var out map[string]any
 	if err := json.Unmarshal(in, &out); err != nil {
