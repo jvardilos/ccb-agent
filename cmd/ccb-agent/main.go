@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/apex/log"
-	apexcli "github.com/apex/log/handlers/cli"
 	"github.com/jvardilos/ccb-agent/pkg/commands"
 	cli "github.com/urfave/cli/v3"
 )
@@ -29,7 +28,6 @@ func parseLogLevel(s string) log.Level {
 }
 
 func initLog(level string) {
-	log.SetHandler(apexcli.Default)
 	log.SetLevel(parseLogLevel(level))
 	log.WithField("level", level).Info("Logger initialized")
 }

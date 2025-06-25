@@ -1,0 +1,16 @@
+{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept-Encoding": "gzip",
+    "Host": "httpbin.org",
+    "User-Agent": "Go-http-client/2.0",
+    "X-Amzn-Trace-Id": "Root=1-68534b7f-72ced314380b9ea42aace8b8"
+  },
+  "json": null,
+  "method": "GET",
+  "origin": "47.44.250.2",
+  "url": "https://httpbin.org/anything"
+}
